@@ -18,6 +18,13 @@ The easiest repeatable build is GitHub Actions:
 For a local Linux build, install Buildozer and its Android dependencies, then run:
 `buildozer android debug`
 
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android SDK tools
+        run: |
+          sdkmanager "platform-tools" "platforms;android-33" "build-tools;33.0.2"
+          
 ## Important
 - This is a first working prototype, not a financial-advice engine.
 - It does not connect to bank accounts and does not send data to a server.
